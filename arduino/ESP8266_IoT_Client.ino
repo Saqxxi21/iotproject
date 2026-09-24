@@ -42,10 +42,8 @@
 const char* WIFI_SSID     = "IoT";
 const char* WIFI_PASSWORD = "12345678";
 
-// 2. Backend Server Endpoint
-// - When running locally: Use your computer's local LAN IP: "http://192.168.1.xxx:3000/api/device/sync"
-// - When deployed on Render: Use your Render HTTPS URL: "https://pushpakbhure-iot.onrender.com/api/device/sync"
-const char* SERVER_SYNC_URL = "http://192.168.1.100:3000/api/device/sync";
+// 2. Backend Server Endpoint (Live Render Deployment)
+const char* SERVER_SYNC_URL = "https://iotproject-1-waoe.onrender.com/api/device/sync";
 
 // 3. Pin Definitions
 #define DHTPIN        D5      // DHT11 Data Pin (GPIO 14)
@@ -199,6 +197,8 @@ void syncWithServer() {
     http.begin(client, SERVER_SYNC_URL);
   }
 
+  http.setTimeout(15000); // 15s timeout to handle cloud/Render latency gracefully
+  http.setFollowRedirects(HTTPC_STRICT_FOLLOW_REDIRECTS);
   http.addHeader("Content-Type", "application/json");
 
   int httpResponseCode = http.POST(jsonPayload);

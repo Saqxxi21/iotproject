@@ -49,12 +49,8 @@ In `ESP8266_IoT_Client.ino`, verify your settings:
 const char* WIFI_SSID     = "IoT";
 const char* WIFI_PASSWORD = "12345678";
 
-// 2. Server Endpoint:
-// For Local Testing (replace with your computer's LAN IP):
-const char* SERVER_SYNC_URL = "http://192.168.1.100:3000/api/device/sync";
-
-// For Render Production Deployment:
-// const char* SERVER_SYNC_URL = "https://your-app-name.onrender.com/api/device/sync";
+// 2. Server Endpoint (Live Render Cloud Deployment):
+const char* SERVER_SYNC_URL = "https://iotproject-1-waoe.onrender.com/api/device/sync";
 ```
 
 > **Note on I2C LCD Address:**  

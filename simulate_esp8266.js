@@ -4,7 +4,7 @@
  * and logging the LCD and LED state returned by the server.
  */
 
-const SERVER_URL = 'http://localhost:3000/api/device/sync';
+const SERVER_URL = process.env.SERVER_URL || 'https://iotproject-1-waoe.onrender.com/api/device/sync';
 const INTERVAL_MS = 10000; // 10 seconds
 
 console.log('========================================================');
