@@ -1,0 +1,31 @@
+{
+  "name": "pushpakbhure-iot",
+  "version": "1.0.0",
+  "description": "PushpakBhure IoT Smart Environment Monitoring, Smart LCD, and LED Automation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "iot",
+    "esp8266",
+    "dht11",
+    "lcd-i2c",
+    "render",
+    "sqlite"
+  ],
+  "author": "Gopal & Saqlain - Dept of Electrical Enginnering.Gov College of Engg Yavatmal",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "sqlite3": "^6.0.1"
+  }
+}

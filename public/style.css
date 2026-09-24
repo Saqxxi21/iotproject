@@ -1,0 +1,146 @@
+/* PushpakBhure IoT - Custom Green Theme Styles */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=VT323&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --primary-green: #10b981;
+  --primary-dark-green: #047857;
+  --emerald-glow: rgba(16, 185, 129, 0.35);
+  --lcd-bg: #2d5a27;
+  --lcd-char-active: #c8ffb0;
+  --lcd-char-dim: #3a6833;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #0b130e;
+  color: #e2e8f0;
+}
+
+/* Glassmorphism & Cards */
+.glass-panel {
+  background: rgba(18, 32, 23, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(52, 211, 153, 0.15);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.45);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel-hover:hover {
+  border-color: rgba(52, 211, 153, 0.35);
+  box-shadow: 0 14px 35px -5px rgba(16, 185, 129, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Glowing Neon Elements */
+.glow-green {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.4);
+}
+
+.glow-green-sm {
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+.glow-text-green {
+  text-shadow: 0 0 12px rgba(52, 211, 153, 0.6);
+}
+
+/* LCD 16x2 Hardware Visualizer */
+.lcd-bezel {
+  background: linear-gradient(145deg, #1b281f, #0d1510);
+  border: 3px solid #284431;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8), 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.lcd-screen {
+  background-color: #2b572c;
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.65), 0 0 15px rgba(74, 222, 128, 0.15);
+  font-family: 'VT323', monospace;
+  letter-spacing: 0.25em;
+  color: #d1ffd6;
+  text-shadow: 0 0 6px rgba(167, 243, 208, 0.7);
+}
+
+.lcd-grid-line {
+  font-size: 1.85rem;
+  line-height: 1.25;
+  height: 2.1rem;
+  white-space: pre;
+  overflow: hidden;
+}
+
+/* Gauge SVG Animations */
+.gauge-track {
+  stroke: rgba(52, 211, 153, 0.12);
+}
+
+.gauge-progress {
+  transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.5s ease;
+  transform-origin: center;
+}
+
+/* Custom Seek Bar / Sliders */
+.seek-track {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  height: 12px;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.seek-fill-temp {
+  background: linear-gradient(90deg, #10b981 0%, #34d399 40%, #fbbf24 75%, #ef4444 100%);
+  transition: width 0.8s ease-in-out;
+}
+
+.seek-fill-hum {
+  background: linear-gradient(90deg, #38bdf8 0%, #10b981 50%, #059669 100%);
+  transition: width 0.8s ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0b130e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3828;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
+/* LED Toggle Switch styling */
+.led-toggle-btn {
+  transition: all 0.3s ease;
+}
+.led-toggle-btn.is-active {
+  background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 0 35px rgba(16, 185, 129, 0.55), inset 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Pulse animation for live status */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.pulse-online {
+  animation: pulse-ring 2s infinite;
+}
